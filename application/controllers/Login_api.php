@@ -10,8 +10,8 @@ class Login_api extends JwtAPI_Controller {
         $this->load->database();
 
         $config=[
-            "sub" => "secure.jwt.dwtube", // subject of token
-            "jti" => $this->uuid->v5('secure.jwt.dwtube')// Json Token Id
+            "sub" => "secure.jwt.bitbit", // subject of token
+            "jti" => $this->uuid->v5('secure.jwt.bitbit')// Json Token Id
         ];
         $this->init($config,300); // configuration + auth timeout
     }

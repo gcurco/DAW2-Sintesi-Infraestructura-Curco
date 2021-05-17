@@ -80,24 +80,27 @@ class JwtAPI_Controller extends API_Controller{
         if ($this->ion_auth->login($usr,$pass))
         {
             $user = $this->ion_auth->user()->row();
+            $user_groups = $this->ion_auth->get_users_groups()->result();
 
             $this->token_data->usr=$user->id;
 
             $jwt = $this->renewJWT(); // Get new Token and set to HTTP header
 
             $message = [
-                'status' => API_Controller::HTTP_OK,
                 'token' => $jwt,
+                'user' => $user,
+                'userGroup' => $user_groups,
+                'status' => true,
                 'message' => 'User logged'
             ];
-            $this->set_response($message, API_Controller::HTTP_OK); // 200
+            $this->set_response($message, 200);
         } else {
             $message = [
-                'status' => API_Controller::HTTP_UNAUTHORIZED,
                 'token' => "",
+                'status' => false,
                 'message' => 'Bad username/password'
             ];
-            $this->set_response($message, API_Controller::HTTP_UNAUTHORIZED); // 401
+            $this->set_response($message, 200);
         }
     }
 
