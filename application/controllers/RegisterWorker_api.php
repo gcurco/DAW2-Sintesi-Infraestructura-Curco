@@ -26,18 +26,17 @@ class registerworker_api  extends JwtAPI_Controller {
             $jwt = $this->renewJWT();
 
             //DADES
-            $username = $this->post("user"); 
             $password = $this->post("password");
             $email = $this->post("email");
             $additional_data = array(
                         'first_name' => $this->post("firstName"),
                         'last_name' => $this->post("lastName"),
-                        'company' => $this->post("company"),
+                        //'company' => HOW TO GET THE COMPANY OF LOGED USER,
                         'phone' => $this->post("phone"),
                         );
             $group = array('3'); // Sets user to worker.
 
-            if ($this->ion_auth->register($username, $password, $email, $additional_data, $group) != null){
+            if ($this->ion_auth->register($password, $email, $additional_data, $group) != null){
                 $message = [
                     'status' => true,
                     'message' => 'Perfil editat correctament'
