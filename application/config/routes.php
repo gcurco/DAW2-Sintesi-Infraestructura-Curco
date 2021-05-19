@@ -53,8 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['api/login'] = 'login_api/login';
 $route['api/edit'] = 'editprofile_api/profile_edit';
 $route['api/register'] = 'register_api/register';
-$route['api/register-client'] = 'registerclient_api/registerclient';
-$route['api/register-worker'] = 'registerworker_api/registerworker';
+$route['api/registerclient'] = 'register_api/registerclient';
+$route['api/registerworker'] = 'register_api/registerworker';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
