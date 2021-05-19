@@ -33,6 +33,7 @@ class registerclient_api  extends JwtAPI_Controller {
                         'first_name' => $this->post("firstName"),
                         'last_name' => $this->post("lastName"),
                         'company' => $this->post("company"),
+                        'phone' => $this->post("phone"),
                         );
             $group = array('2'); // Sets user to client.
 

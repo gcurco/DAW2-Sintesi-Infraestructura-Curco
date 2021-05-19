@@ -33,6 +33,7 @@ class registerworker_api  extends JwtAPI_Controller {
                         'first_name' => $this->post("firstName"),
                         'last_name' => $this->post("lastName"),
                         'company' => $this->post("company"),
+                        'phone' => $this->post("phone"),
                         );
             $group = array('3'); // Sets user to worker.
 
