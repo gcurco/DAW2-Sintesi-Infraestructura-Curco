@@ -34,7 +34,7 @@ class register_api  extends JwtAPI_Controller {
         if ($this->ion_auth->register($username, $password, $email, $additional_data, $group) != null){
             $message = [
                 'status' => true,
-                'message' => 'Perfil editat correctament'
+                'message' => 'Perfil creat correctament'
             ];
             $this->set_response($message, 200);
         } else {
