@@ -17,12 +17,40 @@ class Getusers_api extends JwtAPI_Controller {
     }
 
     public function getclients_get() {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer");
+
         $clients = $this->ion_auth->users('clients')->result(); // get users from 'clients' group
-        var_dump($clients);
+        $this->set_response($clients, 200);
     }
 
     public function gettecnics_get() {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer");
+
         $tecnics = $this->ion_auth->users('tecnic')->result(); // get users from 'tecnics' group
-        var_dump($tecnics);
+        $this->set_response($tecnics, 200);
+    }
+
+    public function getclients_options() {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer ");
+
+        $this->response(null,200); // OK (200) being the HTTP response code
+    }
+
+    public function gettecnics_options() {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer ");
+
+        $this->response(null,200); // OK (200) being the HTTP response code
     }
 }
