@@ -55,6 +55,8 @@ $route['api/edit'] = 'editprofile_api/profile_edit';
 $route['api/register'] = 'register_api/register';
 $route['api/registerclient'] = 'register_api/registerclient';
 $route['api/registerworker'] = 'register_api/registerworker';
+$route['api/getclientsusers'] = 'getusers_api/getclients';
+$route['api/gettecnicsusers'] = 'getusers_api/gettecnics';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
