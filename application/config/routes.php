@@ -57,6 +57,8 @@ $route['api/registerclient'] = 'register_api/registerclient';
 $route['api/registerworker'] = 'register_api/registerworker';
 $route['api/getclientsusers'] = 'getusers_api/getclients';
 $route['api/gettecnicsusers'] = 'getusers_api/gettecnics';
+$route['api/addincidencia'] = 'incidencies_api/incidencia';
+$route['api/getincidencies'] = 'incidencies_api/getincidencies';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
