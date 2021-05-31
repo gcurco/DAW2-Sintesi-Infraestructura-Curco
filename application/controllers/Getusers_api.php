@@ -36,6 +36,16 @@ class Getusers_api extends JwtAPI_Controller {
         $this->set_response($tecnics, 200);
     }
 
+    public function deleteuser_delete($id) {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, DELETE, POST, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer");
+
+        //DELETE USER
+        $this->ion_auth->delete_user($id);
+    }
+
     public function getclients_options() {
         $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
         $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
@@ -53,4 +63,15 @@ class Getusers_api extends JwtAPI_Controller {
 
         $this->response(null,200); // OK (200) being the HTTP response code
     }
+
+    public function deleteuser_options($id) {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer ");
+
+        $this->response(null,200); // OK (200) being the HTTP response code
+    }
+
+    
 }
