@@ -60,6 +60,7 @@ $route['api/gettecnicsusers'] = 'getusers_api/gettecnics';
 $route['api/deleteuser/(:any)'] = 'getusers_api/deleteuser/$1';
 $route['api/addincidencia'] = 'incidencies_api/incidencia';
 $route['api/getincidencies'] = 'incidencies_api/getincidencies';
+$route['api/deleteincidencia/(:any)'] = 'incidencies_api/deleteincidencies/$1';
     
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -52,6 +52,16 @@ class Incidencies_api extends JwtAPI_Controller {
         $this->set_response($inc, 200);
     }
 
+    public function deleteincidencies_delete($id) {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, DELETE, POST, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer");
+
+        $inc = $this->incidencies_model->deleteincidencies($id);
+        $this->set_response($inc, 200);
+    }
+
     public function incidencia_options() {
         $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
         $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
@@ -64,6 +74,15 @@ class Incidencies_api extends JwtAPI_Controller {
     public function getincidencies_options() {
         $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
         $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer ");
+
+        $this->response(null,200); // OK (200) being the HTTP response code
+    }
+
+    public function deleteincidencies_options() {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, DELETE, POST, PUT, OPTIONS");
         $this->output->set_header("Access-Control-Allow-Origin: *");
         $this->output->set_header("Authorization: Bearer ");
 
