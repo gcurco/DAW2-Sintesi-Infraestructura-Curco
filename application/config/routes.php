@@ -57,6 +57,9 @@ $route['api/registerclient'] = 'register_api/registerclient';
 $route['api/registerworker'] = 'register_api/registerworker';
 $route['api/getclientsusers'] = 'getusers_api/getclients';
 $route['api/gettecnicsusers'] = 'getusers_api/gettecnics';
+
+$route['api/edituser/(:any)'] = 'getusers_api/getuser/$1';
+
 $route['api/deleteuser/(:any)'] = 'getusers_api/deleteuser/$1';
 $route['api/addincidencia'] = 'incidencies_api/incidencia';
 $route['api/getincidencies'] = 'incidencies_api/getincidencies';
