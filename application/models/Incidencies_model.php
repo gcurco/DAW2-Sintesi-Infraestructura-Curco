@@ -25,6 +25,11 @@ class Incidencies_model extends CI_Model {
         return $query->result();
     }
 
+    public function getincidencia($id) {
+        $query = $this->db->get('incidencies', array('id_incidencia' => $id));
+        return $query->result();
+    }
+
     public function deleteincidencies($id) {
         return $this->db->delete('incidencies', array('id_incidencia' => $id));
     }

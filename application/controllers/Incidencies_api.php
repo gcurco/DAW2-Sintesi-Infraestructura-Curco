@@ -42,13 +42,23 @@ class Incidencies_api extends JwtAPI_Controller {
         }
     }
 
+    public function getincidencia_get($id) {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer");
+
+        $unicInc = $this->incidencies_model->getincidencia($id);
+        $this->set_response($unicInc, 200);
+    }
+
     public function getincidencies_get() {
         $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         $this->output->set_header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         $this->output->set_header("Access-Control-Allow-Origin: *");
         $this->output->set_header("Authorization: Bearer");
 
-        $inc = $this->incidencies_model->getincidencies(); // get users from 'clients' group
+        $inc = $this->incidencies_model->getincidencies();
         $this->set_response($inc, 200);
     }
 
@@ -62,7 +72,26 @@ class Incidencies_api extends JwtAPI_Controller {
         $this->set_response($inc, 200);
     }
 
+    public function editincidencia_put($id) {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, DELETE, POST, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer");
+
+        $inc = $this->incidencies_model->editincidencia($id);
+        $this->set_response($inc, 200);
+    }
+
     public function incidencia_options() {
+        $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+        $this->output->set_header("Authorization: Bearer ");
+
+        $this->response(null,200); // OK (200) being the HTTP response code
+    }
+
+    public function getincidencia_options() {
         $this->output->set_header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
         $this->output->set_header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
         $this->output->set_header("Access-Control-Allow-Origin: *");
